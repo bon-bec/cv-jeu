@@ -912,7 +912,7 @@ function boucle() {
 
             link2.innerHTML = 'Télécharger CV';
             link.href = '#'
-            link2.href = 'Lucas_Silva_DéveloppeurJS.pdf';
+            link2.href = 'cv-jeu/Lucas_Silva_DéveloppeurJS.pdf';
             link2.target = '_blank'
             link2.download = 'cv';
             win.setAttribute("id", "win");
