@@ -115,22 +115,6 @@ var touches = {
 
 window.addEventListener("keydown", function (evenement) {
     switch (evenement.key) {
-        case "Left":
-            touches.Left = true;
-            evenement.preventDefault();
-            break;
-        case "Right":
-            touches.Right = true;
-            evenement.preventDefault();
-            break;
-        case "Up":
-            touches.ArrowUp = true;
-            evenement.preventDefault();
-            break;
-        case "Down":
-            touches.ArrowDown = true;
-            evenement.preventDefault();
-            break;
         case "ArrowLeft":
             touches.ArrowLeft = true;
             evenement.preventDefault();
@@ -147,23 +131,27 @@ window.addEventListener("keydown", function (evenement) {
             touches.ArrowDown = true;
             evenement.preventDefault();
             break;
+        case "Left":
+            touches.Left = true;
+            evenement.preventDefault();
+            break;
+        case "Right":
+            touches.Right = true;
+            evenement.preventDefault();
+            break;
+        case "Up":
+            touches.ArrowUp = true;
+            evenement.preventDefault();
+            break;
+        case "Down":
+            touches.ArrowDown = true;
+            evenement.preventDefault();
+            break;
     }
 });
 
 window.addEventListener("keyup", function (evenement) {
     switch (evenement.key) {
-        case "Left":
-            touches.Left = true;
-            break;
-        case "Right":
-            touches.Right = true;
-            break;
-        case "Up":
-            touches.ArrowUp = true;
-            break;
-        case "Down":
-            touches.ArrowDown = true;
-            break;
         case "ArrowLeft":
             touches.ArrowLeft = false;
             break;
@@ -175,6 +163,18 @@ window.addEventListener("keyup", function (evenement) {
             break;
         case "ArrowDown":
             touches.ArrowDown = false;
+            break;
+        case "Left":
+            touches.Left = true;
+            break;
+        case "Right":
+            touches.Right = true;
+            break;
+        case "Up":
+            touches.Up = true;
+            break;
+        case "Down":
+            touches.Down = true;
             break;
     }
 });
