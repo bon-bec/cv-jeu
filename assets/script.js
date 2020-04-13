@@ -330,7 +330,7 @@ function boucle() {
 
     // Left
 
-    if (touches.ArrowLeft) {
+    if (touches.ArrowLeft || touches.Left) {
         if (left - 10 >= 0) {
             left -= 10;
         } else {
@@ -459,7 +459,7 @@ function boucle() {
 
     // Right
 
-    if (touches.ArrowRight) {
+    if (touches.ArrowRight || touches.Right) {
         if (right + 10 <= largeurZoneDeJeu) {
             left += 10;
         } else {
@@ -604,7 +604,7 @@ function boucle() {
 
     // Up
 
-    if (touches.ArrowUp) {
+    if (touches.ArrowUp || touches.Up) {
         if (top - 10 >= 0) {
             top -= 10;
         } else {
@@ -725,7 +725,7 @@ function boucle() {
 
     // Down
 
-    if (touches.ArrowDown) {
+    if (touches.ArrowDown || touches.Down) {
         if (bottom + 10 <= hauteurZoneDeJeu) {
             top += 10;
         } else {
