@@ -140,11 +140,11 @@ window.addEventListener("keydown", function (evenement) {
             evenement.preventDefault();
             break;
         case "Up":
-            touches.ArrowUp = true;
+            touches.Up = true;
             evenement.preventDefault();
             break;
         case "Down":
-            touches.ArrowDown = true;
+            touches.Down = true;
             evenement.preventDefault();
             break;
     }
