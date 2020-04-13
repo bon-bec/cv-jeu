@@ -918,7 +918,7 @@ function boucle() {
             link2.target = '_blank'
             link2.download = 'Lucas_Silva_DeveloppeurJS';
             win.setAttribute("id", "win");
-            document.getElementById('zoneDeJeu').prepend(win);
+            document.getElementById('zoneDeJeu').insertBefore(win, zoneDeJeu.childNodes[0]);
             document.getElementById('win').appendChild(text);
             document.getElementById('win').appendChild(link);
             document.getElementById('win').appendChild(link2);
