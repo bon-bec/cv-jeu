@@ -914,7 +914,7 @@ function boucle() {
             link.href = '#'
             link2.href = 'Lucas_Silva_DéveloppeurJS.pdf';
             link2.target = '_blank'
-            link2.download = 'Lucas_Silva_DéveloppeurJS.pdf';
+            link2.download = 'cv';
             win.setAttribute("id", "win");
             document.getElementById('zoneDeJeu').prepend(win);
             document.getElementById('win').appendChild(text);
