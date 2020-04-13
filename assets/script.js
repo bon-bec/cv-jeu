@@ -2,11 +2,15 @@
 
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
 
+// Remove Cover
+
 window.onload = function () {
     if (isIE) {
         zoneDeJeu.removeChild(cover);
     };
 };
+
+// Declaracion du compteur
 
 var counter = 0;
 
@@ -110,7 +114,7 @@ var touches = {
 };
 
 window.addEventListener("keydown", function (evenement) {
-    switch (evenement.code) {
+    switch (evenement.key) {
         case "ArrowLeft":
             touches.ArrowLeft = true;
             evenement.preventDefault();
@@ -147,7 +151,7 @@ window.addEventListener("keydown", function (evenement) {
 });
 
 window.addEventListener("keyup", function (evenement) {
-    switch (evenement.code) {
+    switch (evenement.key) {
         case "ArrowLeft":
             touches.ArrowLeft = false;
             break;
@@ -322,7 +326,7 @@ function boucle() {
                 }, 2000);
             }, 1);
         })();
-    }
+    };
 
     // Collisions
 
@@ -333,7 +337,7 @@ function boucle() {
             left -= 10;
         } else {
             left = 0;
-        }
+        };
 
         if (
             top < displayPortBottom &&
@@ -341,7 +345,7 @@ function boucle() {
             bottom > displayPortTop
         ) {
             left = displayPortRight;
-        }
+        };
 
         if (
             right > poeHatLeft &&
@@ -350,7 +354,7 @@ function boucle() {
             bottom > poeHatTop
         ) {
             left = poeHatRight;
-        }
+        };
 
         if (
             right > usbControllerLeft &&
@@ -359,7 +363,7 @@ function boucle() {
             bottom > usbControllerTop
         ) {
             left = usbControllerRight;
-        }
+        };
 
         if (
             right > bluetoothLeft &&
@@ -368,7 +372,7 @@ function boucle() {
             bottom > bluetoothTop
         ) {
             left = bluetoothRight;
-        }
+        };
 
         if (
             right > processeurLeft &&
@@ -377,7 +381,7 @@ function boucle() {
             bottom > processeurTop
         ) {
             left = processeurRight;
-        }
+        };
 
         if (
             right > ramLeft &&
@@ -386,7 +390,7 @@ function boucle() {
             bottom > ramTop
         ) {
             left = ramRight;
-        }
+        };
 
         if (
             right > ethernetControlerLeft &&
@@ -395,7 +399,7 @@ function boucle() {
             bottom > ethernetControlerTop
         ) {
             left = ethernetControlerRight;
-        }
+        };
 
         if (
             right > gpioHeaderLeft &&
@@ -403,7 +407,7 @@ function boucle() {
             left < gpioHeaderRight
         ) {
             left = gpioHeaderRight;
-        }
+        };
 
         if (
             right > hdmi1Left &&
@@ -411,7 +415,7 @@ function boucle() {
             bottom > hdmi1Top
         ) {
             left = hdmi1Right;
-        }
+        };
 
         if (
             right > hdmi2Left &&
@@ -419,7 +423,7 @@ function boucle() {
             bottom > hdmi2Top
         ) {
             left = hdmi2Right;
-        }
+        };
 
         if (
             right > audioVideoLeft &&
@@ -427,7 +431,7 @@ function boucle() {
             bottom > audioVideoTop
         ) {
             left = audioVideoRight;
-        }
+        };
 
         if (
             right > powerSlotLeft &&
@@ -435,7 +439,7 @@ function boucle() {
             bottom > powerSlotTop
         ) {
             left = powerSlotRight;
-        }
+        };
 
         if (
             right > cameraPortLeft &&
@@ -443,7 +447,7 @@ function boucle() {
             bottom > cameraPortTop
         ) {
             left = cameraPortRight;
-        }
+        };
 
         if (
             right > chipsLeft &&
@@ -452,7 +456,7 @@ function boucle() {
             bottom > chipsTop
         ) {
             left = chipsRight;
-        }
+        };
     }
 
     // Right
@@ -462,7 +466,7 @@ function boucle() {
             left += 10;
         } else {
             left = largeurZoneDeJeu - largeurPlayer;
-        }
+        };
 
         if (
             right >= ethernetLeft &&
@@ -470,7 +474,7 @@ function boucle() {
             left < ethernetRight
         ) {
             left = ethernetLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= usb2Left &&
@@ -478,7 +482,7 @@ function boucle() {
             bottom > usb2Top
         ) {
             left = usb2Left - largeurPlayer;
-        }
+        };
 
         if (
             right >= usb3Left &&
@@ -486,7 +490,7 @@ function boucle() {
             bottom > usb3Top
         ) {
             left = usb3Left - largeurPlayer;
-        }
+        };
 
         if (
             right >= poeHatLeft &&
@@ -495,7 +499,7 @@ function boucle() {
             bottom > poeHatTop
         ) {
             left = poeHatLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= usbControllerLeft &&
@@ -504,7 +508,7 @@ function boucle() {
             bottom > usbControllerTop
         ) {
             left = usbControllerLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= bluetoothLeft &&
@@ -513,7 +517,7 @@ function boucle() {
             bottom > bluetoothTop
         ) {
             left = bluetoothLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= ethernetControlerLeft &&
@@ -522,7 +526,7 @@ function boucle() {
             bottom > ethernetControlerTop
         ) {
             left = ethernetControlerLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= processeurLeft &&
@@ -531,7 +535,7 @@ function boucle() {
             bottom > processeurTop
         ) {
             left = processeurLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= ramLeft &&
@@ -540,7 +544,7 @@ function boucle() {
             bottom > ramTop
         ) {
             left = ramLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= gpioHeaderLeft &&
@@ -548,7 +552,7 @@ function boucle() {
             left < gpioHeaderRight
         ) {
             left = gpioHeaderLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= hdmi1Left &&
@@ -556,7 +560,7 @@ function boucle() {
             bottom > hdmi1Top
         ) {
             left = hdmi1Left - largeurPlayer;
-        }
+        };
 
         if (
             right >= hdmi2Left &&
@@ -564,7 +568,7 @@ function boucle() {
             bottom > hdmi2Top
         ) {
             left = hdmi2Left - largeurPlayer;
-        }
+        };
 
         if (
             right >= audioVideoLeft &&
@@ -572,7 +576,7 @@ function boucle() {
             bottom > audioVideoTop
         ) {
             left = audioVideoLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= powerSlotLeft &&
@@ -580,7 +584,7 @@ function boucle() {
             bottom > powerSlotTop
         ) {
             left = powerSlotLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= cameraPortLeft &&
@@ -588,7 +592,7 @@ function boucle() {
             bottom > cameraPortTop
         ) {
             left = cameraPortLeft - largeurPlayer;
-        }
+        };
 
         if (
             right >= chipsLeft &&
@@ -597,7 +601,7 @@ function boucle() {
             bottom > chipsTop
         ) {
             left = chipsLeft - largeurPlayer;
-        }
+        };
     }
 
     // Up
@@ -607,7 +611,7 @@ function boucle() {
             top -= 10;
         } else {
             top = 0;
-        }
+        };
 
         if (
             top < displayPortBottom &&
@@ -615,7 +619,7 @@ function boucle() {
             bottom > displayPortTop
         ) {
             top = displayPortBottom;
-        }
+        };
 
         if (
             right > ethernetLeft &&
@@ -623,7 +627,7 @@ function boucle() {
             bottom > ethernetTop
         ) {
             top = ethernetBottom;
-        }
+        };
 
         if (
             right > usb2Left &&
@@ -631,7 +635,7 @@ function boucle() {
             bottom > usb2Top
         ) {
             top = usb2Bottom;
-        }
+        };
 
         if (
             right > usb3Left &&
@@ -639,7 +643,7 @@ function boucle() {
             bottom > usb3Top
         ) {
             top = usb3Bottom;
-        }
+        };
 
         if (
             right > poeHatLeft &&
@@ -648,7 +652,7 @@ function boucle() {
             bottom > poeHatTop
         ) {
             top = poeHatBottom;
-        }
+        };
 
         if (
             right > usbControllerLeft &&
@@ -657,7 +661,7 @@ function boucle() {
             bottom > usbControllerTop
         ) {
             top = usbControllerBottom;
-        }
+        };
 
         if (
             right > bluetoothLeft &&
@@ -666,7 +670,7 @@ function boucle() {
             bottom > bluetoothTop
         ) {
             top = bluetoothBottom;
-        }
+        };
 
         if (
             right > ethernetControlerLeft &&
@@ -675,7 +679,7 @@ function boucle() {
             bottom > ethernetControlerTop
         ) {
             top = ethernetControlerBottom;
-        }
+        };
 
         if (
             right > processeurLeft &&
@@ -684,7 +688,7 @@ function boucle() {
             bottom > processeurTop
         ) {
             top = processeurBottom;
-        }
+        };
 
         if (
             right > ramLeft &&
@@ -693,7 +697,7 @@ function boucle() {
             bottom > ramTop
         ) {
             top = ramBottom;
-        }
+        };
 
         if (
             right > gpioHeaderLeft &&
@@ -701,7 +705,7 @@ function boucle() {
             left < gpioHeaderRight
         ) {
             top = gpioHeaderBottom;
-        }
+        };
 
         if (
             right > cameraPortLeft &&
@@ -709,7 +713,7 @@ function boucle() {
             bottom > cameraPortTop
         ) {
             top = cameraPortBottom;
-        }
+        };
 
         if (
             right > chipsLeft &&
@@ -718,7 +722,7 @@ function boucle() {
             bottom > chipsTop
         ) {
             top = chipsBottom;
-        }
+        };
     }
 
     // Down
@@ -728,7 +732,7 @@ function boucle() {
             top += 10;
         } else {
             top = hauteurZoneDeJeu - hauteurPlayer;
-        }
+        };
 
         if (
             top < displayPortBottom &&
@@ -736,7 +740,7 @@ function boucle() {
             bottom >= displayPortTop
         ) {
             top = displayPortTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > bluetoothLeft &&
@@ -745,7 +749,7 @@ function boucle() {
             bottom >= bluetoothTop
         ) {
             top = bluetoothTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > usb2Left &&
@@ -753,7 +757,7 @@ function boucle() {
             bottom >= usb2Top
         ) {
             top = usb2Top - hauteurPlayer;
-        }
+        };
 
         if (
             right > usb3Left &&
@@ -761,7 +765,7 @@ function boucle() {
             bottom >= usb3Top
         ) {
             top = usb3Top - hauteurPlayer;
-        }
+        };
 
         if (
             right > poeHatLeft &&
@@ -770,7 +774,7 @@ function boucle() {
             bottom >= poeHatTop
         ) {
             top = poeHatTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > usbControllerLeft &&
@@ -779,7 +783,7 @@ function boucle() {
             bottom >= usbControllerTop
         ) {
             top = usbControllerTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > ethernetControlerLeft &&
@@ -788,7 +792,7 @@ function boucle() {
             bottom >= ethernetControlerTop
         ) {
             top = ethernetControlerTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > processeurLeft &&
@@ -797,7 +801,7 @@ function boucle() {
             bottom >= processeurTop
         ) {
             top = processeurTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > ramLeft &&
@@ -806,7 +810,7 @@ function boucle() {
             bottom >= ramTop
         ) {
             top = ramTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > hdmi1Left &&
@@ -814,7 +818,7 @@ function boucle() {
             bottom >= hdmi1Top
         ) {
             top = hdmi1Top - hauteurPlayer;
-        }
+        };
 
         if (
             right > hdmi2Left &&
@@ -822,7 +826,7 @@ function boucle() {
             bottom >= hdmi2Top
         ) {
             top = hdmi2Top - hauteurPlayer;
-        }
+        };
 
         if (
             right > audioVideoLeft &&
@@ -830,7 +834,7 @@ function boucle() {
             bottom >= audioVideoTop
         ) {
             top = audioVideoTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > powerSlotLeft &&
@@ -838,7 +842,7 @@ function boucle() {
             bottom >= powerSlotTop
         ) {
             top = powerSlotTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > cameraPortLeft &&
@@ -846,7 +850,7 @@ function boucle() {
             bottom >= cameraPortTop
         ) {
             top = cameraPortTop - hauteurPlayer;
-        }
+        };
 
         if (
             right > chipsLeft &&
@@ -855,7 +859,7 @@ function boucle() {
             bottom >= chipsTop
         ) {
             top = chipsTop - hauteurPlayer;
-        }
+        };
 
     }
 
@@ -908,11 +912,11 @@ function boucle() {
                 player.style.display = 'block';
                 player.style.top = "60px";
                 player.style.left = "10px";
-            }
+            };
 
             link2.innerHTML = 'Télécharger CV';
             link.href = '#'
-            link2.href = 'cv-jeu/Lucas_Silva_DéveloppeurJS.pdf';
+            link2.href = 'Lucas_Silva_DeveloppeurJS.pdf';
             link2.target = '_blank'
             link2.download = 'cv';
             win.setAttribute("id", "win");
@@ -920,9 +924,9 @@ function boucle() {
             document.getElementById('win').appendChild(text);
             document.getElementById('win').appendChild(link);
             document.getElementById('win').appendChild(link2);
-        }
-    }
-}
+        };
+    };
+};
 setInterval(boucle, 20);
 
 setTimeout(function () {
