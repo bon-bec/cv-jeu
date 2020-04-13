@@ -1,3 +1,11 @@
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+window.onload = function () {
+    if (isIE) {
+        zoneDeJeu.removeChild(cover);
+    };
+};
+
 var counter = 0;
 
 // Déclaration de divs
@@ -92,22 +100,46 @@ var touches = {
     ArrowLeft: false,
     ArrowRight: false,
     ArrowUp: false,
-    ArrowDown: false
+    ArrowDown: false,
+    Left: false,
+    Right: false,
+    Up: false,
+    Down: false
 };
 
 window.addEventListener("keydown", function (evenement) {
     switch (evenement.code) {
         case "ArrowLeft":
             touches.ArrowLeft = true;
+            evenement.preventDefault();
             break;
         case "ArrowRight":
             touches.ArrowRight = true;
+            evenement.preventDefault();
             break;
         case "ArrowUp":
             touches.ArrowUp = true;
+            evenement.preventDefault();
             break;
         case "ArrowDown":
             touches.ArrowDown = true;
+            evenement.preventDefault();
+            break;
+        case "Left":
+            touches.Left = true;
+            evenement.preventDefault();
+            break;
+        case "Right":
+            touches.Right = true;
+            evenement.preventDefault();
+            break;
+        case "Up":
+            touches.ArrowUp = true;
+            evenement.preventDefault();
+            break;
+        case "Down":
+            touches.ArrowDown = true;
+            evenement.preventDefault();
             break;
     }
 });
@@ -126,6 +158,18 @@ window.addEventListener("keyup", function (evenement) {
         case "ArrowDown":
             touches.ArrowDown = false;
             break;
+        case "Left":
+            touches.Left = true;
+            break;
+        case "Right":
+            touches.Right = true;
+            break;
+        case "Up":
+            touches.ArrowUp = true;
+            break;
+        case "Down":
+            touches.ArrowDown = true;
+            break;
     }
 });
 
@@ -136,7 +180,6 @@ var coordonnees = [];
 var allCoordonnees = [
     [200, 500],
     [380, 500],
-    [470, 10],
     [150, 770],
     [470, 530],
     [460, 760],
@@ -144,10 +187,19 @@ var allCoordonnees = [
     [430, 260],
     [340, 190],
     [470, 140],
-    [190, 50],
     [310, 750],
     [120, 570],
     [190, 370],
+    [240, 370],
+    [200, 540],
+    [380, 650],
+    [440, 430],
+    [310, 600],
+    [470, 10],
+    [190, 50],
+    [50, 50],
+    [10, 10],
+    [290, 5],
     [350, 5]
 ]
 
@@ -263,9 +315,11 @@ function boucle() {
             setTimeout(function () {
                 cover.style.left = '100px';
                 cover.style.opacity = '0';
+                setTimeout(function () {
+                    zoneDeJeu.removeChild(cover);
+                }, 2000);
             }, 1);
         })();
-
     }
 
     // Collisions
@@ -803,8 +857,6 @@ function boucle() {
 
     }
 
-    // Coordonnees actuelles jouer
-
     player.style.left = left + "px";
     player.style.top = top + "px";
 
@@ -833,7 +885,7 @@ function boucle() {
         document.body.appendChild(newDiv);
 
         if (counter == 8) {
-            cover.style.display = 'none';
+            //cover.style.display = 'none';
             skill.style.display = 'none';
             player.style.display = 'none';
             var win = document.createElement('div');
@@ -871,7 +923,7 @@ function boucle() {
 }
 setInterval(boucle, 20);
 
-setTimeout(() => {
+setTimeout(function () {
     skill.style.display = 'block';
     coordonnees = allCoordonnees[Math.floor(Math.random() * allCoordonnees.length)];
     skill.style.top = coordonnees[0] + "px";
