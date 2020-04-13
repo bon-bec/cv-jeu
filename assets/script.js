@@ -198,7 +198,7 @@ var allCoordonnees = [
     [200, 540],
     [380, 650],
     [440, 430],
-    [310, 600],
+    [320, 600],
     [470, 10],
     [190, 50],
     [50, 50],
@@ -916,7 +916,7 @@ function boucle() {
             link.href = '#'
             link2.href = 'Lucas_Silva_DeveloppeurJS.pdf';
             link2.target = '_blank'
-            link2.download = 'Lucas_Silva_DeveloppeurJS';
+            //link2.download = 'Lucas_Silva_DeveloppeurJS';
             win.setAttribute("id", "win");
             document.getElementById('zoneDeJeu').insertBefore(win, zoneDeJeu.childNodes[0]);
             document.getElementById('win').appendChild(text);
