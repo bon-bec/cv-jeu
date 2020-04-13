@@ -1,8 +1,6 @@
-// fix IE
+// fix IE Remove Cover
 
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-// Remove Cover
 
 window.onload = function () {
     if (isIE) {
@@ -165,16 +163,16 @@ window.addEventListener("keyup", function (evenement) {
             touches.ArrowDown = false;
             break;
         case "Left":
-            touches.Left = true;
+            touches.Left = false;
             break;
         case "Right":
-            touches.Right = true;
+            touches.Right = false;
             break;
         case "Up":
-            touches.Up = true;
+            touches.Up = false;
             break;
         case "Down":
-            touches.Down = true;
+            touches.Down = false;
             break;
     }
 });
